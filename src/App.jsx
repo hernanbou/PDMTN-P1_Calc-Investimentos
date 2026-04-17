@@ -1,9 +1,16 @@
+import CapturaDados from "./components/CapturaDados"
+
+
+const calcular = (dados) => {
+  console.log(dados)
+}
+
 function App() {
 
   return (
-    <>
-      <h1>"Hello, Investimentos!"</h1>
-    </>
+    <div>
+      <CapturaDados onCalculo={calcular}/>
+    </div>
   )
 }
 
