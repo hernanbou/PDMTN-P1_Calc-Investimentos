@@ -29,8 +29,10 @@ export default function CapturaDados({onCalculo}) {
     return (
 
     <main>
-        <h3>Simulador de Investimentos</h3>
-        <p>Descubra quanto seu dinheiro pode render com juros compostos</p>
+        <header>
+            <h3>Simulador de Investimentos</h3>
+            <p>Descubra quanto seu dinheiro pode render com juros compostos</p>
+        </header>
         <form>
             <div>
                 <label 
