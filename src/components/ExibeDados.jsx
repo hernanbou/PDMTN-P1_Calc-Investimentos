@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ExibeDados extends Component {
   render() {
 
-    const {onDados} = this.props
+    const {onDados, onHistory} = this.props
 
     return (
       <main>
@@ -40,9 +40,17 @@ export default class ExibeDados extends Component {
         <hr />
         <h3>Histórico de Simulações</h3>
 
-        <ul>
-            <li></li>
-        </ul>
+        {onHistory.length === 0 ? (
+            <p>Não existe historico de Simulações</p>
+        ):(
+            <ul>
+            {onHistory.map((item, index) => (
+                <li key={index}>
+                    {item.data} - R$ {item.valorFinal}
+                </li>
+            ))}
+            </ul>
+        )}
       </main>
     )
   }

@@ -7,6 +7,7 @@ import ExibeDados from "./components/ExibeDados"
 function App() {
 
   const [resultado, setResultado] = useState(null)
+  const [historico, setHistorico] = useState([])
 
   const handleDados = (dados) => {
     let total = Number(dados.valorInicial)
@@ -34,15 +35,26 @@ function App() {
     }
 
     setResultado(resultadoFinal)
+
+    const novoHistorico ={
+      data: new Date().toLocaleString(),
+      valorFinal: total.toFixed(2)
+    }
+
+    setHistorico([...historico, novoHistorico])
   }
 
   return (
     <main>
       <div>
-        <CapturaDados onCalculo={handleDados}/>
+        <CapturaDados onCalculo={handleDados}
+        />
       </div>
       <div>
-        <ExibeDados onDados={resultado}/>
+        <ExibeDados 
+          onDados={resultado}
+          onHistory={historico}
+          />
       </div>
     </main>
   )
