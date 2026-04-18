@@ -45,16 +45,18 @@ function App() {
   }
 
   return (
-    <main>
-      <div>
-        <CapturaDados onCalculo={handleDados}
-        />
-      </div>
-      <div>
-        <ExibeDados 
-          onDados={resultado}
-          onHistory={historico}
-          />
+    <main className="bg-dark text-light min-vh-100 py-4">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <CapturaDados onCalculo={handleDados}
+            />
+            <ExibeDados 
+              onDados={resultado}
+              onHistory={historico}
+              />
+          </div>
+        </div>
       </div>
     </main>
   )
